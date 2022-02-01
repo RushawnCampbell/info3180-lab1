@@ -5,7 +5,7 @@ Werkzeug Documentation:  http://werkzeug.pocoo.org/documentation/
 This file creates your application.
 """
 
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
@@ -17,7 +17,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return 'My home page'
+    return f"<p>My home page </p> <a href='{url_for('about')}'> About </a>"
 
 
 @app.route('/about')
